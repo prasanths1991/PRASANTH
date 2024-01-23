@@ -22,7 +22,7 @@ def find_flight_status(url,xpath):
                 present.append(value.split(" ")[0])
                 #print(value,tt[index+2],sep=":")
 
-    ll = list(actual.difference(present))
+    ll = list(actual.difference(set(present)))
     d = "data not available"
     for i in ll:
         status_flight.append(i+": "+d)
